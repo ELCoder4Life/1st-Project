@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/Inter-Regular.woff2') format('woff2'),
+    url('fonts/Inter-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    font-family:'Inter';
+    background-color: #F5F5F5,;
+}
+.slideshow-container {
+    height: 100vh; /* set the height to the height of the viewport */
+
+  }
+  
+  .slide {
+    height: 100vh; /* set the height to the height of the viewport */
+    display: flex; /* use flexbox to center the image */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 9rem;
+    padding-left: 4rem;
+
+  }
+
+  .slide .introduction {
+    margin-top: 1rem;
+    font-size: 4rem;
+    color: rgb(80, 85, 91);
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  .container {
+    position: relative;
+    width: 500px;
+  }
+  
+  .read-more {
+    font-size: 1.5rem;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    color: #000000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .read-more svg {
+    margin-left: 0px;
+    width: 3rem;
+    height: 3rem;
+  }
