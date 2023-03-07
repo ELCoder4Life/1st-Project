@@ -7,10 +7,10 @@ h1{
   font-size: 100px;
 }
 h2 {
-  font-size: 200px;
+  font-size: 100px;
 }
 p{
-  font-size: 100px;
+  font-size: 50px;
 }
 .habit_tracker {
   padding-top: 10rem;
@@ -19,8 +19,8 @@ p{
 
 }
 svg {
-  height: 200px;
-  width: 200px;
+  height: 70px;
+  width: 70px;
   color: white;
   background-Color: rgb(170, 204, 199);
   margin:1rem;
@@ -39,13 +39,13 @@ svg {
   display:none;
 }
 .tracker {
-  font-size: 50px;
+  font-size: 1.5rem;
   background-color: rgb(131, 211, 231);
   padding-left: 2rem;
   padding-right:2rem;
 }
 .noTracker {
-  font-size: 3rem;
+  font-size: 1.5rem;
   background-color: gray;
   color: white;
 }
