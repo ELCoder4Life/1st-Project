@@ -1,43 +1,69 @@
-// Initialize variables
-const slides = document.querySelectorAll('.slide');
-let currentSlide = 0;
-let isScrolling = false;
+const buttonOne = document.querySelector('.one')
+const buttonTwo = document.querySelector('.two')
+const buttonThree = document.querySelector('.three')
+const deleteButtonOne = document.querySelector(".deleteOne")
+const deleteButtonTwo = document.querySelector(".deleteTwo")
+const deleteButtonThree = document.querySelector(".deleteThree")
+const sleepingList = document.querySelector(".sleeping")
+const workoutList = document.querySelector(".workout")
+const readingList = document.querySelector(".reading")
+// event listner for clicking on add
+buttonOne.addEventListener('click', addSleeping);
+buttonTwo.addEventListener('click', addWorkout);
+buttonThree.addEventListener('click', addReading);
+//notdoing the events
+deleteButtonOne.addEventListener('click', noSleeping)
+deleteButtonTwo.addEventListener('click', noWorkout );
+deleteButtonThree.addEventListener('click', noReading);
+// event listener for deleting
+let habitDayOne = 0;
+let habitDayTwo = 0;
+let habitDayThree = 0;
 
-// Add event listener for scrolling
-window.addEventListener('scroll', debounce(checkSlide));
 
-function checkSlide() {
-  // If user is already scrolling, ignore this event
-  if (isScrolling) return;
+function addSleeping (){
+    habitDayOne++;
+    const sleepingDiv = document.createElement('div');
+    sleepingDiv.classList.add('tracker')
+    sleepingDiv.innerText = "Day " + habitDayOne
+    sleepingList.appendChild(sleepingDiv)
+    console.log('Hello')
+}
+function addWorkout(){
+    habitDayTwo++;
+    const workoutDiv = document.createElement('div');
+    workoutDiv.classList.add('tracker')
+    workoutDiv.innerText = "Day " + habitDayTwo
+    workoutList.appendChild(workoutDiv)
 
-  // Set isScrolling to true
-  isScrolling = true;
+}
 
-  // Get window height and scroll position
-  const windowHeight = window.innerHeight;
-  const scrollPosition = window.scrollY;
+function addReading (){
+    habitDayThree++;
+    const readingDiv = document.createElement('div');
+    readingDiv.classList.add('tracker')
+    readingDiv.innerText = "Day " + habitDayThree
+    readingList.appendChild(readingDiv)
 
-  // Check if user has scrolled past the current slide
-  const slideBottom = slides[currentSlide].offsetTop + slides[currentSlide].offsetHeight;
-  if (slideBottom - windowHeight <= scrollPosition) {
-    // Hide the current slide
-    slides[currentSlide].style.display = 'none';
-
-    // Move to next slide
-    currentSlide++;
-
-    // If we've reached the end of the slides, reset to the beginning
-    if (currentSlide >= slides.length) {
-      currentSlide = 0;
-    }
-
-    // Show the next slide
-    slides[currentSlide].style.display = 'block';
-
-    // Set isScrolling back to false
-    isScrolling = false;
-  } else {
-    // User is not scrolling, so set isScrolling back to false
-    isScrolling = false;
-  }
+}
+function noSleeping (){
+    habitDayOne++;
+    const sleepingDiv = document.createElement('div');
+    sleepingDiv.classList.add('noTracker')
+    sleepingDiv.innerText = "Day " + habitDayOne
+    sleepingList.appendChild(sleepingDiv)
+}
+function noWorkout (){
+    habitDayTwo++;
+    const workoutDiv = document.createElement('div');
+    workoutDiv.classList.add('noTracker')
+    workoutDiv.innerText = "Day " + habitDayTwo
+    workoutList.appendChild(workoutDiv)
+}
+function noReading (){
+    habitDayThree++;
+    const readingDiv = document.createElement('div');
+    readingDiv.classList.add('noTracker')
+    readingDiv.innerText = "Day " + habitDayThree
+    readingList.appendChild(readingDiv)
 }
