@@ -1,3 +1,7 @@
+//Server Code
+//document.addEventListener('DOMContentLoaded', getHabits)
+
+//Main Code
 const buttonOne = document.querySelector('.one')
 const buttonTwo = document.querySelector('.two')
 const buttonThree = document.querySelector('.three')
@@ -27,7 +31,7 @@ function addSleeping (){
     sleepingDiv.classList.add('tracker')
     sleepingDiv.innerText = "Day " + habitDayOne
     sleepingList.appendChild(sleepingDiv)
-    console.log('Hello')
+    saveLocalSleeping(sleepingList.innerHTML)
 }
 function addWorkout(){
     habitDayTwo++;
@@ -67,3 +71,17 @@ function noReading (){
     readingDiv.innerText = "Day " + habitDayThree
     readingList.appendChild(readingDiv)
 }
+/*
+saveLocalSleeping
+
+saveLocalWorkout
+*/
+/*function saveLocalSleeping (input){
+    localStorage.setItem('habits',JSON.stringify(input));
+}
+const data = JSON.parse(localStorage.getItem('habits')).
+data.forEach(
+    console.log('Hello')
+)
+*/
+// abits.forEach(function(habit){
